@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #FAF6F2;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+img {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 60px;
+    border-radius: 12px;
+}
+
+.navigation ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+main {
+    padding: 20px;
+    background-color: #FAF6F2;
+}
+
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 300px;
+    background: #FFFFFF;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    /* ทำให้กล่องอยู่ตรงกลาง */
+    max-width: 1200px;
+    /* จำกัดความกว้างไม่ให้กว้างจนเกินไป */
+    width: 100%;
+    /* ให้ย่อได้ในจอเล็ก */
+}
+
+
+.btn {
+    background: #F4A261;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.welcome-right {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    grid-auto-flow: dense;
+    /* สำคัญ! ช่วยให้ตำแหน่งย้ายขึ้น */
+}
+
+
+/* Photos */
+.photos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+}
+
+
+.photos img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.bottom-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+    /* เว้นระยะจาก welcome */
+}
+
+aside {
+    width: 25%;
+    /* ปรับได้ */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: #FFFFFF;
+
+}
+
+aside ul {
+    list-style: none;
+    /* ลบจุดหน้ารายการ */
+    padding-left: 0;
+    /* ลบระยะย่อหน้าเดิมของ ul */
+}
+
+aside ul li a {
+    text-decoration: none;
+    /* ลบเส้นใต้ลิงก์ */
+    color: inherit;
+    /* ใช้สีตามปกติของ aside */
+}
+
+
+section {
+    width: 75%;
+}
+
