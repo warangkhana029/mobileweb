@@ -10,8 +10,9 @@
 
 <body>
     <header>
+
         <div class="logo">
-            <img src="../images/logo.png" alt="Logo">
+            <canvas id="logoCanvas" width="140" height="140"></canvas>
             <h1>Thong thiao nai KKU</h1>
         </div>
 
@@ -24,6 +25,11 @@
                 <li><a href="#">แผนที่</a></li>
             </ul>
         </nav>
+
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+
     </header>
 
     <main class="layout">
@@ -66,8 +72,9 @@
                 </div>
 
                 <article>
-
-                    <h2>สถานที่แนะนำ</h2>
+                    <div class="eiei">
+                        <h1>สถานที่แนะนำ</h1>
+                    </div>
 
                     <div class="content1">
                         <h3>1.แปลงกังหัน</h3>
@@ -123,9 +130,128 @@
         </div>
     </main>
 
+    <section class="form-section">
+        <h2>แนะนำสถานที่เพิ่มเติม</h2>
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="kku-form">
+            <input type="hidden" name="access_key" value="09d1b9ff-ea59-4d4f-b904-7a8a613b17d2">
+
+            <label>ชื่อสถานที่</label>
+            <input type="text" name="place" placeholder="กรอกชื่อสถานที่" required>
+
+            <label>รายละเอียด</label>
+            <textarea name="detail" placeholder="อธิบายรายละเอียดสถานที่" required></textarea>
+
+            <label>URL รูปภาพ</label>
+            <input type="url" name="image" placeholder="วาง URL ของภาพ" required>
+
+            <button type="submit">ส่งข้อมูล</button>
+        </form>
+    </section>
+
+
     <footer>
         <p>673380020-8 นางสาววรางคณา ภูปัญญา</p>
     </footer>
+
+
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.querySelector(".navigation");
+
+        hamburger.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        });
+    </script>
+
+    <script>
+        const c = document.getElementById("logoCanvas");
+        const ctx = c.getContext("2d");
+
+        let angle = 0;
+
+        function draw() {
+            ctx.clearRect(0, 0, 140, 140);
+
+            const cx = 70;
+            const cy = 70;
+
+            // 🔸 วาดวงกลมหมุน
+            ctx.save();
+            ctx.translate(cx, cy);
+            ctx.rotate(angle);
+            ctx.beginPath();
+            ctx.strokeStyle = "#F4A261";
+            ctx.lineWidth = 5;
+            ctx.arc(0, 0, 45, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.restore();
+
+            // 🔸 ข้อความตรงกลาง
+            ctx.font = "bold 24px Inter";
+            ctx.fillStyle = "#F4A261";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("KKU", cx, cy);
+
+            // 🔸 รถ + คน นั่งบนรถวิ่งรอบวง
+            const carAngle = angle * 2;
+            const x = cx + Math.cos(carAngle) * 55;
+            const y = cy + Math.sin(carAngle) * 55;
+
+            ctx.save();
+            ctx.translate(x, y);
+
+            // หมุนตัวรถให้หันไปตามทิศวิ่ง (เพิ่มความเนียน)
+            ctx.rotate(carAngle + Math.PI / 2);
+
+            // 🚗 วาดตัวรถ
+            ctx.fillStyle = "#E76F51"; // สีส้มแดง
+            ctx.fillRect(-15, -8, 30, 16); // ตัวรถ
+
+            // ล้อรถ
+            ctx.fillStyle = "#333";
+            ctx.beginPath(); // ล้อหน้า
+            ctx.arc(-8, 10, 4, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath(); // ล้อหลัง
+            ctx.arc(8, 10, 4, 0, Math.PI * 2);
+            ctx.fill();
+
+            // 👦 วาดคนบนรถ (หัว)
+            ctx.beginPath();
+            ctx.fillStyle = "#FFDAB9"; // สีผิวอ่อน
+            ctx.arc(0, -14, 6, 0, Math.PI * 2); // หัว
+            ctx.fill();
+
+            // ดวงตา
+            ctx.fillStyle = "#333";
+            ctx.beginPath();
+            ctx.arc(-2, -15, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(2, -15, 1.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            // ปาก
+            ctx.beginPath();
+            ctx.strokeStyle = "#E76F51";
+            ctx.lineWidth = 1.5;
+            ctx.arc(0, -13, 3, 0, Math.PI);
+            ctx.stroke();
+
+            ctx.restore();
+
+            // หมุน
+            angle += 0.02;
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+
+
+
 </body>
 
 </html>

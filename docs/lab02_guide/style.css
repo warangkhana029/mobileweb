@@ -1,3 +1,4 @@
+/* -------------------------- GLOBAL -------------------------- */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,11 @@
 
 body {
     background: #FAF6F2;
-    font-family: 'Inter', sans-serif;
     color: #333;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
+/* -------------------------- HEADER -------------------------- */
 header {
     display: flex;
     justify-content: space-between;
@@ -19,15 +20,9 @@ header {
     padding: 25px 40px;
     background: #fff;
     border-radius: 20px;
-    margin: 20px;
+    margin: 20px auto;
+    max-width: 1300px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-}
-
-
-img {
-    width: 300px;
-    height: auto;
-    margin-top: 20px;
 }
 
 .logo {
@@ -37,7 +32,7 @@ img {
 }
 
 .logo img {
-    width: 60px;
+    width: 55px;
     border-radius: 12px;
 }
 
@@ -50,105 +45,541 @@ img {
 .navigation a {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
     font-weight: 500;
+    transition: 0.2s;
 }
 
-main {
-    padding: 20px;
-    background-color: #FAF6F2;
+.navigation a:hover {
+    color: #E67E22;
 }
 
-
+/* -------------------------- WELCOME (HERO SECTION) -------------------------- */
 .welcome {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 300px;
-    background: #FFFFFF;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    /* ทำให้กล่องอยู่ตรงกลาง */
-    max-width: 1200px;
-    /* จำกัดความกว้างไม่ให้กว้างจนเกินไป */
-    width: 100%;
-    /* ให้ย่อได้ในจอเล็ก */
+    gap: 60px;
 }
 
+.welcome-1 h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+}
+
+.welcome-1 p {
+    margin: 15px 0;
+    font-size: 16px;
+    opacity: 0.8;
+}
 
 .btn {
     background: #F4A261;
     color: #fff;
-    padding: 12px 28px;
-    border-radius: 50px;
+    padding: 14px 30px;
+    border-radius: 40px;
     text-decoration: none;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 15px;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.welcome-right {
-    flex: 1;
+.btn:hover {
+    background: #e7893e;
+}
+
+/* ภาพทางขวาแบบเป็น Grid 2 ช่อง */
+.welcome-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    grid-auto-flow: dense;
-    /* สำคัญ! ช่วยให้ตำแหน่งย้ายขึ้น */
 }
 
-
-/* Photos */
-.photos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background: #FFFFFF;
-}
-
-
-.photos img {
-    width: 100%;
+.welcome-2 img {
+    width: 50%;
     border-radius: 18px;
+    object-fit: cover;
 }
 
+/* -------------------------- MAIN LAYOUT -------------------------- */
 .bottom-row {
+    max-width: 1300px;
+    margin: 20px auto 40px;
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    margin-top: 20px;
-    /* เว้นระยะจาก welcome */
+    gap: 25px;
 }
 
+/* -------------------------- ASIDE -------------------------- */
 aside {
     width: 25%;
-    /* ปรับได้ */
-    padding: 40px;
+    background: #fff;
+    padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background: #FFFFFF;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
 
+aside h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 aside ul {
     list-style: none;
-    /* ลบจุดหน้ารายการ */
-    padding-left: 0;
-    /* ลบระยะย่อหน้าเดิมของ ul */
 }
 
-aside ul li a {
+aside li {
+    margin: 12px 0;
+}
+
+aside a {
     text-decoration: none;
-    /* ลบเส้นใต้ลิงก์ */
-    color: inherit;
-    /* ใช้สีตามปกติของ aside */
+    color: #444;
+    transition: 0.2s;
 }
 
+aside a:hover {
+    color: #E67E22;
+}
+
+/* -------------------------- PHOTOS GRID -------------------------- */
+.photos {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photos h2 {
+    grid-column: span 3;
+    margin-bottom: 5px;
+}
+
+.photos img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* -------------------------- ARTICLE -------------------------- */
+article {
+    margin-top: 25px;
+}
+
+article h2 {
+    margin: 20px 0;
+}
+
+article img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+.content1,
+.content2,
+.content3,
+.content4 {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.content1 h3,
+.content2 h3,
+.content3 h3,
+.content4 h3 {
+    grid-column: span 3;
+}
+
+.content1 p,
+.content2 p,
+.content3 p,
+.content4 p {
+    grid-column: span 3;
+    opacity: 0.85;
+}
+
+
+/* -------------------------- FOOTER -------------------------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    opacity: 0.7;
+    background-color: #f7c69c;
+    color: #080400;
+    font-weight: bolder;
+}
+
+img {
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+}
+
+/* --------------------- ปรับ welcome layout --------------------- */
+.welcome {
+    max-width: 1300px;
+    margin: 30px auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    /* ลดช่องว่างลงให้สมดุล */
+}
+
+.welcome-1 {
+    flex: 1.2;
+    /* เพิ่มพื้นที่ให้ข้อความ */
+}
+
+.welcome-2 {
+    flex: 1;
+    /* ลดพื้นที่รูป เพื่อดันภาพไปขวา */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.welcome-2 img {
+    width: 100%;
+    /* ให้ภาพเต็มช่อง */
+    height: 180px;
+    /* ทำให้สูงเท่ากัน ดูเรียบร้อย */
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* --------------------- ปรับ layout aside + section --------------------- */
+.bottom-row {
+    max-width: 1300px;
+    margin: 20px auto 40px;
+    display: flex;
+    gap: 25px;
+}
+
+aside {
+    width: 30%;
+    /* จาก 25% → 30% */
+}
 
 section {
-    width: 75%;
+    width: 70%;
+    /* ลดพื้นที่ content */
 }
 
+/* --------------------- ปรับ grid ของ content ใน article --------------------- */
+.photos {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.content1,
+.content2,
+.content3,
+.content4 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    /* ลดความห่างเล็กน้อย */
+}
+
+.bottom-row {
+    align-items: flex-start;
+    /* ไม่ยืด aside ให้สูงเท่ากับ section */
+}
+
+article>div {
+    margin-left: -408px;
+    /* ขยับเฉพาะ content1-4 */
+}
+
+.eiei>div {
+    margin-left: -360px;
+    /* ขยับเฉพาะ content1-4 */
+}
+
+.eiei {
+    margin-bottom: 20px;
+}
+
+
+
+/* ----------------------------------------------------
+   📱 Tablet (768px - 1024px)
+---------------------------------------------------- */
+@media (max-width: 1024px) {
+
+
+    .hamburger {
+        display: block;
+    }
+
+    .navigation ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px;
+        right: 40px;
+        background: #fff;
+        width: 50%;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        gap: 18px;
+    }
+
+    .navigation.active ul {
+        display: flex;
+    }
+
+    header {
+        padding: 20px 25px;
+    }
+
+    .navigation ul {
+        gap: 15px;
+    }
+
+    .welcome {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .welcome-1 {
+        order: 1;
+    }
+
+    .welcome-2 {
+        grid-template-columns: 1fr 1fr;
+        order: 2;
+        width: 100%;
+    }
+
+    .welcome-2 img {
+        height: 150px;
+    }
+
+    /* layout aside + photos */
+    .bottom-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    aside,
+    section {
+        width: 100%;
+    }
+
+    .photos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content1,
+    .content2,
+    .content3,
+    .content4 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .content1 h3,
+    .content2 h3,
+    .content3 h3,
+    .content4 h3,
+    .content1 p,
+    .content2 p,
+    .content3 p,
+    .content4 p {
+        grid-column: span 2;
+    }
+
+    /* ยกเลิก margin-left ที่ใช้ใน desktop */
+    article>div,
+    .eiei>div {
+        margin-left: 0;
+    }
+}
+
+
+.hamburger {
+    display: none;
+    /* เดสก์ท็อปไม่ต้องแสดง */
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+}
+
+/* ----------------------------------------------------
+   📱 Mobile (ต่ำกว่า 768px)
+---------------------------------------------------- */
+@media (max-width: 767px) {
+
+
+    /* แสดง hamburger */
+    .hamburger {
+        display: block;
+    }
+
+    /* ซ่อนเมนู desktop */
+    .navigation ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        right: 20px;
+        background: #fff;
+        width: 70%;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        gap: 15px;
+    }
+
+    /* เมนูเมื่อกดแล้ว */
+    .navigation.active ul {
+        display: flex;
+    }
+
+    .navigation ul li a {
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+
+
+    /* HEADER */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 18px 20px;
+    }
+
+    .navigation ul {
+        display: none;
+        /* ซ่อนเมนูเดสก์ท็อป */
+    }
+
+    /* ถ้ามี hamburger ค่อยเปิดภายหลัง */
+
+    /* HERO */
+    .welcome {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .welcome-2 {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .welcome-2 img {
+        height: 150px;
+    }
+
+    /* BODY layout */
+    .bottom-row {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    section {
+        width: 100%;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photos h2 {
+        grid-column: span 1;
+    }
+
+    .content1,
+    .content2,
+    .content3,
+    .content4 {
+        grid-template-columns: 1fr;
+    }
+
+    .content1 h3,
+    .content2 h3,
+    .content3 h3,
+    .content4 h3,
+    .content1 p,
+    .content2 p,
+    .content3 p,
+    .content4 p {
+        grid-column: span 1;
+    }
+
+    article>div,
+    .eiei>div {
+        margin-left: 0 !important;
+    }
+
+    /* รูปใหญ่ที่ท้ายบทความ */
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.form-section {
+    margin: 50px auto;
+    max-width: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.kku-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.kku-form input,
+.kku-form textarea {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.kku-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    background: #F4A261;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.kku-form button:hover {
+    background: #e28242;
+}
