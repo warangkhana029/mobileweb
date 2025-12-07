@@ -1,4 +1,4 @@
-/* -------------------------- GLOBAL -------------------------- */
+
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     line-height: 1.7;
 }
 
-/* -------------------------- HEADER -------------------------- */
 header {
     display: flex;
     justify-content: space-between;
@@ -53,7 +52,7 @@ header {
     color: #E67E22;
 }
 
-/* -------------------------- WELCOME (HERO SECTION) -------------------------- */
+
 .welcome {
     max-width: 1300px;
     margin: 30px auto;
@@ -95,7 +94,6 @@ header {
     background: #e7893e;
 }
 
-/* ภาพทางขวาแบบเป็น Grid 2 ช่อง */
 .welcome-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -108,7 +106,6 @@ header {
     object-fit: cover;
 }
 
-/* -------------------------- MAIN LAYOUT -------------------------- */
 .bottom-row {
     max-width: 1300px;
     margin: 20px auto 40px;
@@ -116,7 +113,6 @@ header {
     gap: 25px;
 }
 
-/* -------------------------- ASIDE -------------------------- */
 aside {
     width: 25%;
     background: #fff;
@@ -148,7 +144,6 @@ aside a:hover {
     color: #E67E22;
 }
 
-/* -------------------------- PHOTOS GRID -------------------------- */
 .photos {
     background: #fff;
     padding: 25px;
@@ -169,7 +164,6 @@ aside a:hover {
     border-radius: 15px;
 }
 
-/* -------------------------- ARTICLE -------------------------- */
 article {
     margin-top: 25px;
 }
@@ -213,8 +207,6 @@ article img {
     opacity: 0.85;
 }
 
-
-/* -------------------------- FOOTER -------------------------- */
 footer {
     text-align: center;
     padding: 20px;
@@ -231,7 +223,6 @@ img {
     margin-top: 20px;
 }
 
-/* --------------------- ปรับ welcome layout --------------------- */
 .welcome {
     max-width: 1300px;
     margin: 30px auto;
@@ -243,17 +234,14 @@ img {
     justify-content: space-between;
     align-items: center;
     gap: 40px;
-    /* ลดช่องว่างลงให้สมดุล */
 }
 
 .welcome-1 {
     flex: 1.2;
-    /* เพิ่มพื้นที่ให้ข้อความ */
 }
 
 .welcome-2 {
     flex: 1;
-    /* ลดพื้นที่รูป เพื่อดันภาพไปขวา */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -261,14 +249,11 @@ img {
 
 .welcome-2 img {
     width: 100%;
-    /* ให้ภาพเต็มช่อง */
     height: 180px;
-    /* ทำให้สูงเท่ากัน ดูเรียบร้อย */
     object-fit: cover;
     border-radius: 18px;
 }
 
-/* --------------------- ปรับ layout aside + section --------------------- */
 .bottom-row {
     max-width: 1300px;
     margin: 20px auto 40px;
@@ -278,15 +263,12 @@ img {
 
 aside {
     width: 30%;
-    /* จาก 25% → 30% */
 }
 
 section {
     width: 70%;
-    /* ลดพื้นที่ content */
 }
 
-/* --------------------- ปรับ grid ของ content ใน article --------------------- */
 .photos {
     grid-template-columns: repeat(3, 1fr);
 }
@@ -297,22 +279,18 @@ section {
 .content4 {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    /* ลดความห่างเล็กน้อย */
 }
 
 .bottom-row {
     align-items: flex-start;
-    /* ไม่ยืด aside ให้สูงเท่ากับ section */
 }
 
 article>div {
     margin-left: -408px;
-    /* ขยับเฉพาะ content1-4 */
 }
 
 .eiei>div {
     margin-left: -360px;
-    /* ขยับเฉพาะ content1-4 */
 }
 
 .eiei {
@@ -320,10 +298,6 @@ article>div {
 }
 
 
-
-/* ----------------------------------------------------
-   📱 Tablet (768px - 1024px)
----------------------------------------------------- */
 @media (max-width: 1024px) {
 
 
@@ -376,7 +350,6 @@ article>div {
         height: 150px;
     }
 
-    /* layout aside + photos */
     .bottom-row {
         flex-direction: column;
         gap: 20px;
@@ -409,7 +382,7 @@ article>div {
         grid-column: span 2;
     }
 
-    /* ยกเลิก margin-left ที่ใช้ใน desktop */
+
     article>div,
     .eiei>div {
         margin-left: 0;
@@ -419,7 +392,6 @@ article>div {
 
 .hamburger {
     display: none;
-    /* เดสก์ท็อปไม่ต้องแสดง */
     font-size: 28px;
     background: none;
     border: none;
@@ -427,18 +399,13 @@ article>div {
 
 }
 
-/* ----------------------------------------------------
-   📱 Mobile (ต่ำกว่า 768px)
----------------------------------------------------- */
 @media (max-width: 767px) {
 
 
-    /* แสดง hamburger */
     .hamburger {
         display: block;
     }
 
-    /* ซ่อนเมนู desktop */
     .navigation ul {
         display: none;
         flex-direction: column;
@@ -453,7 +420,6 @@ article>div {
         gap: 15px;
     }
 
-    /* เมนูเมื่อกดแล้ว */
     .navigation.active ul {
         display: flex;
     }
@@ -465,7 +431,6 @@ article>div {
 
 
 
-    /* HEADER */
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -474,12 +439,8 @@ article>div {
 
     .navigation ul {
         display: none;
-        /* ซ่อนเมนูเดสก์ท็อป */
     }
 
-    /* ถ้ามี hamburger ค่อยเปิดภายหลัง */
-
-    /* HERO */
     .welcome {
         flex-direction: column;
         padding: 30px 20px;
@@ -496,7 +457,6 @@ article>div {
         height: 150px;
     }
 
-    /* BODY layout */
     .bottom-row {
         flex-direction: column;
     }
@@ -540,7 +500,6 @@ article>div {
         margin-left: 0 !important;
     }
 
-    /* รูปใหญ่ที่ท้ายบทความ */
     img {
         width: 100%;
         height: auto;

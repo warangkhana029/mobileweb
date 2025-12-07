@@ -176,7 +176,6 @@
             const cx = 70;
             const cy = 70;
 
-            // 🔸 วาดวงกลมหมุน
             ctx.save();
             ctx.translate(cx, cy);
             ctx.rotate(angle);
@@ -187,14 +186,12 @@
             ctx.stroke();
             ctx.restore();
 
-            // 🔸 ข้อความตรงกลาง
             ctx.font = "bold 24px Inter";
             ctx.fillStyle = "#F4A261";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
             ctx.fillText("KKU", cx, cy);
 
-            // 🔸 รถ + คน นั่งบนรถวิ่งรอบวง
             const carAngle = angle * 2;
             const x = cx + Math.cos(carAngle) * 55;
             const y = cy + Math.sin(carAngle) * 55;
@@ -202,29 +199,24 @@
             ctx.save();
             ctx.translate(x, y);
 
-            // หมุนตัวรถให้หันไปตามทิศวิ่ง (เพิ่มความเนียน)
             ctx.rotate(carAngle + Math.PI / 2);
 
-            // 🚗 วาดตัวรถ
-            ctx.fillStyle = "#E76F51"; // สีส้มแดง
-            ctx.fillRect(-15, -8, 30, 16); // ตัวรถ
-
-            // ล้อรถ
+         
+            ctx.fillStyle = "#E76F51"; 
+            ctx.fillRect(-15, -8, 30, 16); 
             ctx.fillStyle = "#333";
-            ctx.beginPath(); // ล้อหน้า
+            ctx.beginPath(); 
             ctx.arc(-8, 10, 4, 0, Math.PI * 2);
             ctx.fill();
-            ctx.beginPath(); // ล้อหลัง
+            ctx.beginPath(); 
             ctx.arc(8, 10, 4, 0, Math.PI * 2);
             ctx.fill();
 
-            // 👦 วาดคนบนรถ (หัว)
             ctx.beginPath();
-            ctx.fillStyle = "#FFDAB9"; // สีผิวอ่อน
-            ctx.arc(0, -14, 6, 0, Math.PI * 2); // หัว
+            ctx.fillStyle = "#FFDAB9"; 
+            ctx.arc(0, -14, 6, 0, Math.PI * 2); 
             ctx.fill();
 
-            // ดวงตา
             ctx.fillStyle = "#333";
             ctx.beginPath();
             ctx.arc(-2, -15, 1.5, 0, Math.PI * 2);
@@ -233,7 +225,6 @@
             ctx.arc(2, -15, 1.5, 0, Math.PI * 2);
             ctx.fill();
 
-            // ปาก
             ctx.beginPath();
             ctx.strokeStyle = "#E76F51";
             ctx.lineWidth = 1.5;
@@ -242,7 +233,7 @@
 
             ctx.restore();
 
-            // หมุน
+         
             angle += 0.02;
             requestAnimationFrame(draw);
         }
