@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #062f58;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-image:
+        radial-gradient(1px 1px at 20% 30%, white, transparent),
+        radial-gradient(1px 1px at 80% 40%, white, transparent),
+        radial-gradient(1px 1px at 50% 80%, white, transparent),
+        radial-gradient(1px 1px at 10% 70%, white, transparent),
+        radial-gradient(1px 1px at 90% 90%, white, transparent),
+        radial-gradient(2px 2px at 30% 50%, white, transparent),
+        radial-gradient(2px 2px at 70% 20%, white, transparent);
+}
+
+
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #dceaed;
+    margin-bottom: 30px;
+}
+
+/* เรียงแนวนอน 1 แถว */
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* รูปขนาดเท่ากัน */
+.image-container img {
+    width: 25%;
+    /* 4 รูปพอดีแถว */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.download-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 16px 34px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #062f58;
+
+    /* สีทองแบบดวงดาว */
+    background: linear-gradient(135deg, #fff7b2, #ffd700, #ffb700);
+    border-radius: 40px;
+
+  
+}
+
+.download-btn:hover {
+    color: #eb2f2f;
+    background: linea
+}
+
