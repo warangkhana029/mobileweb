@@ -32,7 +32,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* เรียงแนวนอน 1 แถว */
+
 .image-container {
     display: flex;
     justify-content: space-between;
@@ -41,10 +41,10 @@ h2 {
     margin: auto;
 }
 
-/* รูปขนาดเท่ากัน */
+
 .image-container img {
     width: 25%;
-    /* 4 รูปพอดีแถว */
+  
     height: auto;
     object-fit: cover;
     border-radius: 10px;
@@ -64,15 +64,13 @@ h2 {
     text-decoration: none;
     color: #062f58;
 
-    /* สีทองแบบดวงดาว */
     background: linear-gradient(135deg, #fff7b2, #ffd700, #ffb700);
     border-radius: 40px;
 
-  
+
 }
 
 .download-btn:hover {
     color: #eb2f2f;
     background: linea
 }
-

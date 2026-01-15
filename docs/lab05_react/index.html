@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ionic react</title>
+    <link rel="stylesheet" href="../lab05_react/style.css">
+</head>
+
+<body>
+    <h1>Ionic react</h1>
+    <h2>ตัวอย่างหน้าจอแอปพลิเคชัน</h2>
+
+    <div class="image-container">
+        <img src="../lab05_react/img/one.png" alt="one">
+        <img src="../lab05_react/img/two.png" alt="two">
+        <img src="../lab05_react/img/three.png" alt="three">
+
+    </div>
+
+    <div class="download-section">
+        <a href="../lab05_react/apk/app-debug.apk" download class="download-btn">
+            Download APK
+        </a>
+    </div>
+
+    <img src="../lab05_react/img/spongebob13.png" class="floating-img img1">
+    <img src="../lab05_react/img/spongebob3.png" class="floating-img img2">
+    <img src="../lab05_react/img/spongebob8.png" class="floating-img img3">
+    <img src="../lab05_react/img/spongebob9.png" class="floating-img img4">
+
+    <script>
+        document.querySelectorAll(".floating-img").forEach(img => {
+            img.addEventListener("click", () => {
+                img.classList.remove("bounce"); // รีเซ็ต
+                void img.offsetWidth;           // บังคับ reflow
+                img.classList.add("bounce");    // เด้ง
+            });
+        });
+    </script>
+
+
+
+</body>
+
+</html>
