@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "830889173528",
+    "project_id": "supermin-c2650",
+    "storage_bucket": "supermin-c2650.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:830889173528:android:aed9a5d286373a8990196d",
+        "android_client_info": {
+          "package_name": "cpkku.shemin.lab07authen"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2ZxQ1IFxTY76RDsRIl_uVYqt8_rBoGvY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

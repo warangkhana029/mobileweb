@@ -495,6 +495,12 @@ importers:
 
   apps/lab07-authen:
     dependencies:
+      '@capacitor-firebase/authentication':
+        specifier: ^8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)(firebase@12.9.0)
+      '@capacitor/android':
+        specifier: 8.1.0
+        version: 8.1.0(@capacitor/core@8.1.0)
       '@capacitor/app':
         specifier: 8.0.1
         version: 8.0.1(@capacitor/core@8.1.0)
@@ -516,6 +522,94 @@ importers:
       '@ionic/vue-router':
         specifier: ^8.0.0
         version: 8.7.11(@stencil/core@4.38.3)(vue-router@4.6.3(vue@3.5.25(typescript@5.9.3)))(vue@3.5.25(typescript@5.9.3))
+      firebase:
+        specifier: ^12.9.0
+        version: 12.9.0
+      ionicons:
+        specifier: ^7.0.0
+        version: 7.4.0
+      vue:
+        specifier: ^3.3.0
+        version: 3.5.25(typescript@5.9.3)
+      vue-router:
+        specifier: ^4.2.0
+        version: 4.6.3(vue@3.5.25(typescript@5.9.3))
+    devDependencies:
+      '@capacitor/cli':
+        specifier: 8.1.0
+        version: 8.1.0
+      '@vitejs/plugin-legacy':
+        specifier: ^5.0.0
+        version: 5.4.3(terser@5.44.1)(vite@5.4.21(@types/node@24.10.1)(terser@5.44.1))
+      '@vitejs/plugin-vue':
+        specifier: ^4.0.0
+        version: 4.6.2(vite@5.4.21(@types/node@24.10.1)(terser@5.44.1))(vue@3.5.25(typescript@5.9.3))
+      '@vue/eslint-config-typescript':
+        specifier: ^12.0.0
+        version: 12.0.0(eslint-plugin-vue@9.33.0(eslint@8.57.1))(eslint@8.57.1)(typescript@5.9.3)
+      '@vue/test-utils':
+        specifier: ^2.3.0
+        version: 2.4.6
+      cypress:
+        specifier: ^13.5.0
+        version: 13.17.0
+      eslint:
+        specifier: ^8.35.0
+        version: 8.57.1
+      eslint-plugin-vue:
+        specifier: ^9.9.0
+        version: 9.33.0(eslint@8.57.1)
+      jsdom:
+        specifier: ^22.1.0
+        version: 22.1.0
+      terser:
+        specifier: ^5.4.0
+        version: 5.44.1
+      typescript:
+        specifier: ~5.9.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@24.10.1)(terser@5.44.1)
+      vitest:
+        specifier: ^0.34.6
+        version: 0.34.6(jsdom@22.1.0)(terser@5.44.1)
+      vue-tsc:
+        specifier: ^2.1.10
+        version: 2.2.12(typescript@5.9.3)
+
+  apps/lab08-ai:
+    dependencies:
+      '@capacitor/android':
+        specifier: 8.1.0
+        version: 8.1.0(@capacitor/core@8.1.0)
+      '@capacitor/app':
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
+      '@capacitor/camera':
+        specifier: ^8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/core':
+        specifier: 8.1.0
+        version: 8.1.0
+      '@capacitor/haptics':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/keyboard':
+        specifier: 8.0.0
+        version: 8.0.0(@capacitor/core@8.1.0)
+      '@capacitor/status-bar':
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
+      '@ionic/vue':
+        specifier: ^8.0.0
+        version: 8.7.11(@stencil/core@4.38.3)(vue-router@4.6.3(vue@3.5.25(typescript@5.9.3)))(vue@3.5.25(typescript@5.9.3))
+      '@ionic/vue-router':
+        specifier: ^8.0.0
+        version: 8.7.11(@stencil/core@4.38.3)(vue-router@4.6.3(vue@3.5.25(typescript@5.9.3)))(vue@3.5.25(typescript@5.9.3))
+      firebase:
+        specifier: ^12.9.0
+        version: 12.9.0
       ionicons:
         specifier: ^7.0.0
         version: 7.4.0
@@ -1081,6 +1175,15 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
+  '@capacitor-firebase/authentication@8.0.1':
+    resolution: {integrity: sha512-F9ocfBGAnMGSvZ7dfwcqACS17HFZEF7B3dSbao34ZBxo5wCDikCROX/T6L5jNq2CGX4ByLOpOmvvzfH+nT5w3A==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+      firebase: ^12.6.0
+    peerDependenciesMeta:
+      firebase:
+        optional: true
+
   '@capacitor/android@8.0.0':
     resolution: {integrity: sha512-FrBSvVAC5JuLaYHNyDnwQny0/SYnP+xDQbc/KA4wInmRkMXLDv22fkx9aBJIDrxjuUVd+jsRih4SAt8FgMEzCw==}
     peerDependencies:
@@ -1090,6 +1193,11 @@ packages:
     resolution: {integrity: sha512-Mrk2MFKSg9YA4BPLKm03wwFnGKcvzNBERUTcxjW1NkLrF6YhJwygAT69f/YGopFvOhhqdnDPsuZuASUfmpkSpw==}
     peerDependencies:
       '@capacitor/core': ^8.0.0
+
+  '@capacitor/android@8.1.0':
+    resolution: {integrity: sha512-z0acTPxj5DCy/U2FU7w+GA93oC+wdyKnsOcRg5rutDmSYa8Do1tzYqApKgf+hnuTNPbtrCTHp0Zy1cLiK/4MEw==}
+    peerDependencies:
+      '@capacitor/core': ^8.1.0
 
   '@capacitor/app@7.1.0':
     resolution: {integrity: sha512-W7m09IWrUjZbo7AKeq+rc/KyucxrJekTBg0l4QCm/yDtCejE3hebxp/W2esU26KKCzMc7H3ClkUw32E9lZkwRA==}
@@ -4368,6 +4476,7 @@ packages:
   tar@7.5.7:
     resolution: {integrity: sha512-fov56fJiRuThVFXD6o6/Q354S7pnWMJIVlDBYijsTNx6jKSE4pvrDTs6lUnmGvNyfJwFQQwWy3owKz1ucIhveQ==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   terser@5.44.1:
     resolution: {integrity: sha512-t/R3R/n0MSwnnazuPpPNVO60LX0SKL45pyl9YlvxIdkH0Of7D5qM2EVe+yASRIlY5pZ73nclYJfNANGWPwFDZw==}
@@ -5474,6 +5583,12 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
+  '@capacitor-firebase/authentication@8.0.1(@capacitor/core@8.1.0)(firebase@12.9.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
+    optionalDependencies:
+      firebase: 12.9.0
+
   '@capacitor/android@8.0.0(@capacitor/core@8.0.0)':
     dependencies:
       '@capacitor/core': 8.0.0
@@ -5481,6 +5596,10 @@ snapshots:
   '@capacitor/android@8.0.1(@capacitor/core@8.0.1)':
     dependencies:
       '@capacitor/core': 8.0.1
+
+  '@capacitor/android@8.1.0(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
 
   '@capacitor/app@7.1.0(@capacitor/core@7.4.4)':
     dependencies:
@@ -5505,6 +5624,10 @@ snapshots:
   '@capacitor/camera@8.0.0(@capacitor/core@8.0.1)':
     dependencies:
       '@capacitor/core': 8.0.1
+
+  '@capacitor/camera@8.0.0(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
 
   '@capacitor/cli@7.4.4':
     dependencies:

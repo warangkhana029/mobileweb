@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
+  appId: 'cpkku.shemin.lab07authen',
   appName: 'lab07-authen',
   webDir: 'dist'
 };
