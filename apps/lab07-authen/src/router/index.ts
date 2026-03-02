@@ -1,17 +1,17 @@
-import { createRouter, createWebHistory } from '@ionic/vue-router'
-import { RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory } from '@ionic/vue-router';
+import { RouteRecordRaw } from 'vue-router';
 import TabsPage from '../views/TabsPage.vue'
-// import LoginPage from '@/views/LoginPage.vue'
-import { authService } from '@/auth/auth-service'
+import LoginPage from '../pages/LoginPage.vue';
+import { authService } from '../auth/auth-service';
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/login',
-    component: LoginPage
-  },
-  {
     path: '/',
     redirect: '/tabs/tab1'
+  },
+  {
+    path: '/login',
+    component: LoginPage,
   },
   {
     path: '/tabs/',
@@ -35,30 +35,30 @@ const routes: Array<RouteRecordRaw> = [
         path: 'tab3',
         component: () => import('@/views/Tab3Page.vue'),
         meta: { requiresAuth: true }
-      }
+      },
     ]
   }
-]
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
-})
+});
 
 router.beforeEach(async (to) => {
-  const user = await authService.getCurrentUser()
+  const user = await authService.getCurrentUser();
 
-  // ถ้า login แล้ว ห้ามกลับไปหน้า login
+  // login แล้ว ห้ามเข้า /login
   if (to.path === '/login' && user) {
-    return '/tabs/tab1'
+    return '/tabs/tab1';
   }
 
-  // ถ้าหน้านั้นต้อง login แต่ยังไม่มี user
+  // ยังไม่ login แต่จะเข้า tabs
   if (to.meta.requiresAuth && !user) {
-    return '/login'
+    return '/login';
   }
 
-  return true
-})
+  return true;
+});
 
-export default router
+export default router;

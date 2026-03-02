@@ -496,8 +496,8 @@ importers:
   apps/lab07-authen:
     dependencies:
       '@capacitor-firebase/authentication':
-        specifier: ^8.0.1
-        version: 8.0.1(@capacitor/core@8.1.0)(firebase@12.9.0)
+        specifier: ^8.1.0
+        version: 8.1.0(@capacitor/core@8.1.0)(firebase@12.9.0)
       '@capacitor/android':
         specifier: 8.1.0
         version: 8.1.0(@capacitor/core@8.1.0)
@@ -508,11 +508,11 @@ importers:
         specifier: 8.1.0
         version: 8.1.0
       '@capacitor/haptics':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
       '@capacitor/keyboard':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
       '@capacitor/status-bar':
         specifier: 8.0.1
         version: 8.0.1(@capacitor/core@8.1.0)
@@ -1175,8 +1175,8 @@ packages:
     resolution: {integrity: sha512-qQ5m48eI/MFLQ5PxQj4PFaprjyCTLI37ElWMmNs0K8Lk3dVeOdNpB3ks8jc7yM5CDmVC73eMVk/trk3fgmrUpA==}
     engines: {node: '>=6.9.0'}
 
-  '@capacitor-firebase/authentication@8.0.1':
-    resolution: {integrity: sha512-F9ocfBGAnMGSvZ7dfwcqACS17HFZEF7B3dSbao34ZBxo5wCDikCROX/T6L5jNq2CGX4ByLOpOmvvzfH+nT5w3A==}
+  '@capacitor-firebase/authentication@8.1.0':
+    resolution: {integrity: sha512-Vo4Yp2Ttk+rqGjs8e/wNr1MiLr3czLCrKPcUIZMAG15QsvjEWw24CYeYx/wjeagB2tkcDUbBoaH8itCxJ39pww==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
       firebase: ^12.6.0
@@ -5593,7 +5593,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
 
-  '@capacitor-firebase/authentication@8.0.1(@capacitor/core@8.1.0)(firebase@12.9.0)':
+  '@capacitor-firebase/authentication@8.1.0(@capacitor/core@8.1.0)(firebase@12.9.0)':
     dependencies:
       '@capacitor/core': 8.1.0
     optionalDependencies:

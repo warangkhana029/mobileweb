@@ -33,8 +33,8 @@ export class FirebaseAppAuthService implements IAuthService {
   }
 
 
-  //ให้ UI คุม state เอง แต่ service คุม listener/flow ให้
-  async startPhoneLogin(creds: PhoneCredentials): Promise<{ verificationId: string }> {
+  //ให้ UI คุม state เอง แต่ service คุม listener/flow ให้//
+    async startPhoneLogin(creds: PhoneCredentials): Promise<{ verificationId: string }> {
     // จะได้ verificationId ผ่าน event phoneCodeSent
     return new Promise(async (resolve, reject) => {
       const offFailed = await FirebaseAuthentication.addListener("phoneVerificationFailed", (e) => {

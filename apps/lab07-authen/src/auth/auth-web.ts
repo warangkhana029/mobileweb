@@ -1,30 +1,36 @@
+import { initializeApp } from "firebase/app";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithPhoneNumber,
+  ConfirmationResult,
+  RecaptchaVerifier,
+  User,
+} from "firebase/auth";
+
+import {
+  AuthUser,
+  IAuthService,
+  EmailPasswordCredentials,
+  PhoneCredentials,
+} from "./auth-interface";
+
+// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCNxJJ7DKGHyhPvZVN3Ee66sTku4zsWM4w",
   authDomain: "supermin-c2650.firebaseapp.com",
   projectId: "supermin-c2650",
   storageBucket: "supermin-c2650.firebasestorage.app",
   messagingSenderId: "830889173528",
-  appId: "1:830889173528:web:db28ec1f635cceff90196d",
-  measurementId: "G-6RNF4SYPXG"
+  appId: "1:830889173528:web:e7859fd2f5ec14b490196d",
 };
-
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { AuthUser, IAuthService, EmailPasswordCredentials,PhoneCredentials } from "./auth-interface";
-import {
-  signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithPhoneNumber,
-  ConfirmationResult,
-} from "firebase/auth";
-
 
 export const firebaseApp = initializeApp(firebaseConfig);
 export const firebaseAuth = getAuth(firebaseApp);
 
-
-function mapUser(u: any): AuthUser {
+function mapUser(u: User): AuthUser {
   return {
     uid: u.uid,
     email: u.email,
@@ -33,34 +39,21 @@ function mapUser(u: any): AuthUser {
   };
 }
 
-
-import { RecaptchaVerifier } from "firebase/auth";
-import { code } from "ionicons/icons";
-
-
+// reCAPTCHA
 let verifier: RecaptchaVerifier | null = null;
 let confirmationResult: ConfirmationResult | null = null;
+const RECAPTCHA_ID = "recaptcha-container";
 
-
-// ควรมี div สำหรับ reCAPTCHA ในหน้า login สำหรับโทรศัพท์ ด้วย id="recaptcha-container"
-const recaptchaContainerId: string = "recaptcha-container";
-
-
-export function getRecaptchaVerifier(
-  containerId: string
-): RecaptchaVerifier {
+function getRecaptcha() {
   if (!verifier) {
     verifier = new RecaptchaVerifier(
       firebaseAuth,
-      containerId,
-      {
-        size: "invisible", // หรือ "normal"
-      }
+      RECAPTCHA_ID,
+      { size: "invisible" }
     );
   }
   return verifier;
 }
-
 
 export class FirebaseWebAuthService implements IAuthService {
   async getCurrentUser() {
@@ -69,16 +62,14 @@ export class FirebaseWebAuthService implements IAuthService {
       : null;
   }
 
-
   async loginWithEmailPassword(creds: EmailPasswordCredentials) {
     const r = await signInWithEmailAndPassword(
       firebaseAuth,
-      creds.email,
+      creds.email.trim(),
       creds.password
     );
     return mapUser(r.user);
   }
-
 
   async loginWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -86,32 +77,28 @@ export class FirebaseWebAuthService implements IAuthService {
     return mapUser(r.user);
   }
 
-
-  async logout() {
-    await firebaseAuth.signOut();
-  }
-
-
-  async startPhoneLogin(
-    creds: PhoneCredentials
-  ): Promise<{ verificationId: string }> {
-    const verifier = getRecaptchaVerifier(recaptchaContainerId);
+  async startPhoneLogin(creds: PhoneCredentials) {
+    const v = getRecaptcha();
     confirmationResult = await signInWithPhoneNumber(
       firebaseAuth,
       creds.phoneNumberE164,
-      verifier
+      v
     );
     return { verificationId: confirmationResult.verificationId };
   }
 
-
-  async confirmPhoneCode(payload: { verificationId: string; verificationCode: string }): Promise<AuthUser> {
+  async confirmPhoneCode(payload: {
+    verificationId: string;
+    verificationCode: string;
+  }) {
     if (!confirmationResult) {
-      throw new Error("No confirmation result");
+      throw new Error("OTP not started");
     }
     const r = await confirmationResult.confirm(payload.verificationCode);
     return mapUser(r.user);
   }
 
-
+  async logout() {
+    await firebaseAuth.signOut();
+  }
 }
