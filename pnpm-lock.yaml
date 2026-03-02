@@ -593,11 +593,11 @@ importers:
         specifier: 8.1.0
         version: 8.1.0
       '@capacitor/haptics':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
       '@capacitor/keyboard':
-        specifier: 8.0.0
-        version: 8.0.0(@capacitor/core@8.1.0)
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.1.0)
       '@capacitor/status-bar':
         specifier: 8.0.1
         version: 8.0.1(@capacitor/core@8.1.0)
@@ -1266,6 +1266,11 @@ packages:
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
+  '@capacitor/haptics@8.0.1':
+    resolution: {integrity: sha512-8v8rowLBMeb3CryqoQvXndwyUsoi4pPXf0qFw7IGA4D32Uk7+K6juN2SjRowqunoovkvvbFmU9TD7JIAz2zmFw==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
   '@capacitor/ios@8.0.0':
     resolution: {integrity: sha512-gwSn6X4uHYNHlM8zZmVmM1zjEhexxbHpPSSnH1DZkp8o3zdK/RmH8tmDma+3zPZrhhTSrMC7sT24dKTOvV8www==}
     peerDependencies:
@@ -1283,6 +1288,11 @@ packages:
 
   '@capacitor/keyboard@8.0.0':
     resolution: {integrity: sha512-ycPW6iQyFwzDK95jihesj5EGiyyGSfbBqNek11iNp9tBOB7zDeYkUA2S/vPpOETt3dhP6pWr7a9gNVGuEfj11g==}
+    peerDependencies:
+      '@capacitor/core': '>=8.0.0'
+
+  '@capacitor/keyboard@8.0.1':
+    resolution: {integrity: sha512-HDf4qrvvhLRMsgBoqeqIld6hP8JMK/WPbCYMvz8ajhY6TaibYt6B+NQyky4oIPCOfHTz5OcVsuHkbb8fQvGDAg==}
     peerDependencies:
       '@capacitor/core': '>=8.0.0'
 
@@ -5759,6 +5769,10 @@ snapshots:
     dependencies:
       '@capacitor/core': 8.1.0
 
+  '@capacitor/haptics@8.0.1(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
+
   '@capacitor/ios@8.0.0(@capacitor/core@8.0.0)':
     dependencies:
       '@capacitor/core': 8.0.0
@@ -5780,6 +5794,10 @@ snapshots:
       '@capacitor/core': 8.0.1
 
   '@capacitor/keyboard@8.0.0(@capacitor/core@8.1.0)':
+    dependencies:
+      '@capacitor/core': 8.1.0
+
+  '@capacitor/keyboard@8.0.1(@capacitor/core@8.1.0)':
     dependencies:
       '@capacitor/core': 8.1.0
 

@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'cpkku.warang.lab08',
+  appId: 'cpkku.shemin.lab08-ai',
   appName: 'lab08-ai',
   webDir: 'dist'
 };
